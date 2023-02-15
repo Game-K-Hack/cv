@@ -12,8 +12,11 @@
 }
 
 .container-fluid .row {
-  padding: 0 0 4em 0;
-  padding-left: 300px
+  /* padding: 0 0 4em 0; */
+  /* padding-left: 300px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-fluid .row:nth-child(even) {
@@ -271,7 +274,7 @@ h6 {
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: 10px; /* 20px */
   margin-bottom: 10px
 }
 
@@ -410,7 +413,7 @@ ul ul {
   float: left
 }
 
-.col-xs-12 {
+/* .col-xs-12 {
   width: 100%
 }
 
@@ -508,7 +511,7 @@ ul ul {
 
 .col-xs-offset-0 {
   margin-left: 0
-}
+} */
 
 @media (min-width:768px) {
 
@@ -527,7 +530,7 @@ ul ul {
     float: left
   }
 
-  .col-sm-12 {
+  /* .col-sm-12 {
     width: 100%
   }
 
@@ -625,7 +628,7 @@ ul ul {
 
   .col-sm-offset-0 {
     margin-left: 0
-  }
+  } */
 }
 
 @-webkit-keyframes progress-bar-stripes {
