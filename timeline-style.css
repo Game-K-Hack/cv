@@ -109,10 +109,10 @@
   content: none
 }
 
-.timeline-item:not(.period):hover .timeline-marker:before {
+/* .timeline-item:not(.period):hover .timeline-marker:before {
   background: 0 0;
   border: 3px solid #ff6b6b
-}
+} */
 
 .timeline-content {
   padding-bottom: 40px

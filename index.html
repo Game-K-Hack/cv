@@ -140,96 +140,100 @@
   </h1>
 
 
-  <!-- <div class="min-h-screen py-20 px-10" style="padding-top: 0rem;"> -->
-  <table>
-    <div class="px-10" style="padding-top: 0rem;">
-      <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
-        <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
-          x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }" id="elm2">
-          <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
-            <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
-              <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
-                cy="60" />
-              <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
-                :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
-                stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
-            </svg>
-            <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span>
-          </div>
-          <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Storage</p>
-          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-            x-text="`${percent}%`"></span>
-          <div class="slide-text" style="display: none;">
-            <h2>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-            </h2>
-          </div>
+  <div>
+    <!-- <div class="px-10" style="padding-top: 0rem;"> -->
+    <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
+      <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
+        x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
+        style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
+        id="elm2">
+        <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
+          style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
+          <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
+              cy="60" />
+            <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
+              :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
+              stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
+          </svg>
+          <!-- <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span> -->
+          <img class="absolute text-2xl text-blue-700" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="50"/>
+        </div>
+        <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
+        <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
+          x-text="`${percent}%`"></span>
+        <div class="slide-text" style="display: none;">
+          <h2>
+            <br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+          </h2>
         </div>
       </div>
     </div>
-    <div class="px-10" style="padding-top: 0rem;">
-      <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
-        <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
-          x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }" id="elm2">
-          <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
-            <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
-              <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
-                cy="60" />
-              <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
-                :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
-                stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
-            </svg>
-            <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span>
-          </div>
-          <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Storage</p>
-          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-            x-text="`${percent}%`"></span>
-          <div class="slide-text" style="display: none;">
-            <h2>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-            </h2>
-          </div>
+    <!-- </div> -->
+    <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
+      <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
+        x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
+        style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
+        id="elm2">
+        <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
+          style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
+          <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
+              cy="60" />
+            <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
+              :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
+              stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
+          </svg>
+          <!-- <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span> -->
+          <img class="absolute text-2xl text-blue-700" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="50"/>
+        </div>
+        <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
+        <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
+          x-text="`${percent}%`"></span>
+        <div class="slide-text" style="display: none;">
+          <h2>
+            <br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+            |0123456789012345678901234567890123456789|<br>
+          </h2>
         </div>
       </div>
     </div>
-    <div class="px-10" style="padding-top: 0rem;">
-      <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
-        <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
-          x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }" id="elm2">
-          <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
-            <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
-              <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
-                cy="60" />
-              <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
-                :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
-                stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
-            </svg>
-            <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span>
-          </div>
-          <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Storage</p>
-          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-            x-text="`${percent}%`"></span>
-          <div class="slide-text" style="display: none;">
-            <h2>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-              |0123456789012345678901234567890123456789|<br>
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </table>
+  </div>
+
+
 
   <script>
     document.getElementById("elm2").addEventListener("mouseover", mouseOver);
