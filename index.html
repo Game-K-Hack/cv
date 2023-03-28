@@ -9,22 +9,25 @@
   <link rel="stylesheet" href="./timeline-style.css">
   <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
 
-
-
   <!-- SKILL MODULE -->
   <script src="https://cdn.tailwindcss.com/"></script>
   <script src="./alpine.min.js" defer></script>
 
   <style>
-    #elm2 {
+    #elm {
       height: 5rem;
       align-items: start;
       /* transition: height 0.4s ease-in-out; */
     }
 
-    #elm2:hover {
+    #elm:hover {
       height: 30rem;
       transition: height 0.3s ease-in-out;
+    }
+
+    #elm:hover .slide-text h2 {
+      animation: 0.5s slide-text 0.2s forwards;
+      transform: translateY(-100%);
     }
 
     .slide-text {
@@ -37,25 +40,20 @@
       transform: translateY(-100%);
     }
 
-    #elm2:hover .slide-text h2 {
-      animation: 0.5s slide-text 0.2s forwards;
-      transform: translateY(-100%);
-    }
-
     @keyframes slide-text {
       to {
         transform: translateY(0);
       }
     }
   </style>
+
+  <style>
     .skill-box {
       display: inline-block;
       width: 400px;
       margin-left: 25px;
       margin-right: 25px;
     }
-  <style>
-
   </style>
 </head>
 
@@ -148,85 +146,105 @@
   </h1>
 
 
-  <div style="text-align: center;">
-
-    <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" style="display: inline-block; width: 400px;">
-      <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
-        x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
-        style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
-        id="elm2">
-        <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
-          style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
-          <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
-            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
-              cy="60" />
-            <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
-              :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
-              stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
-          </svg>
-          <!-- <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span> -->
-          <img class="absolute text-2xl text-blue-700" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="50"/>
-        </div>
-        <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
-        <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-          x-text="`${percent}%`"></span>
-        <div class="slide-text" style="display: none;">
-          <h2>
-            |0123456789012345678901234567890123456789|
-          </h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" style="display: inline-block; width: 400px;">
-      <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
-        x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
-        style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
-        id="elm2">
-        <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
-          style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
-          <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
-            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
-              cy="60" />
-            <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
-              :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
-              stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
-          </svg>
-          <!-- <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span> -->
-          <img class="absolute text-2xl text-blue-700" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="50"/>
-        </div>
-        <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
-        <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-          x-text="`${percent}%`"></span>
-        <div class="slide-text" style="display: none;">
-          <h2>
-            |0123456789012345678901234567890123456789|
-          </h2>
-        </div>
-      </div>
-    </div>
+  <div style="text-align: center;" id="sk">
 
   </div>
 
 
 
   <script>
-    document.getElementById("elm2").addEventListener("mouseover", mouseOver);
-    document.getElementById("elm2").addEventListener("mouseout", mouseOut);
-
-    function mouseOver() {
-      var elm = document.querySelector(`div[class="slide-text"]`);
+    function mouseOver(id) {
+      var elm = document.querySelector(`div[id="` + id + `"] div[class="slide-text"]`);
       elm.style.animation = "1s slide-text forwards";
       elm.style.transform = "translateY(0)";
       elm.style.display = ""
     }
 
-    function mouseOut() {
-      var elm = document.querySelector(`div[class="slide-text"]`);
+    function mouseOut(id) {
+      var elm = document.querySelector(`div[id="` + id + `"] div[class="slide-text"]`);
       elm.style.animation = "1s slide-text forwards";
       elm.style.transform = "translateY(-100%)";
       elm.style.display = "none"
     }
+
+    var skill_dict = {
+      "Python": {
+        "src":"./images/python.png", 
+        "percent":"90", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }, 
+      "Arduino": {
+        "src":"./images/arduino.png", 
+        "percent":"15", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }, 
+      "Java": {
+        "src":"./images/java.png", 
+        "percent":"60", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }, 
+      "HTML": {
+        "src":"./images/html.png", 
+        "percent":"80", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }, 
+      "CSS": {
+        "src":"./images/css.png", 
+        "percent":"30", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }, 
+      "PHP": {
+        "src":"./images/php.png", 
+        "percent":"60", 
+        "color": "red",
+        "desc":"|0123456789012345678901234567890123456789|"
+      }
+    }
+
+    function pattern(elm, key) {
+      console.log('<div class="skill-box grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" id="' + key + '"><div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20" x-data="{ circumference: 50 * 2 * Math.PI, percent:' + elm["percent"] + ' }"style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"id="elm"><div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;"><svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true"><circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" /><circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference" :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" /></svg>
+            <img class="absolute text-2xl text-blue-700" src="${elm["src"]}" width="50"/>
+          </div>
+          <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
+          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
+            x-text="\`\${percent}\%\`"></span>
+          <div class="slide-text" style="display: none;">
+            <h2>
+              ${elm["desc"]}
+            </h2>
+          </div>
+        </div>
+      </div>```);
+    }
+
+    var base = document.getElementById("sk").innerHTML
+    for (const [key, value] of Object.entries(skill_dict)) {
+      console.log(key)
+      console.log(value)
+      base += pattern(value, key);
+    }
+    document.getElementById("sk").innerHTML = base;
+
+    for (const [key, value] of Object.entries(object)) {
+      document.getElementById(key).addEventListener(
+        "mouseover", 
+        function() {
+          mouseOver(key)
+        }
+      );
+      document.getElementById(key).addEventListener(
+        "mouseout", 
+        function() {
+          mouseOut(key)
+        }
+      );
+    }
+
   </script>
 
   <!--Professional-experience ends-->
