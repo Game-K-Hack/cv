@@ -53,6 +53,14 @@
       width: 400px;
       margin-left: 25px;
       margin-right: 25px;
+      margin-bottom: 100px;
+    }
+    .skill-box-img {
+      display: block;
+      max-width:50px;
+      max-height:50px;
+      width: auto;
+      height: auto;
     }
   </style>
 </head>
@@ -61,9 +69,9 @@
 
   <div class="header">
 
-    <!--Content before waves-->
+    <!-- Content before waves -->
     <div class="inner-header flex">
-      <!--Just the logo.. Don't mind this-->
+      <!-- Just the logo.. Don't mind this -->
       <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
         <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
@@ -76,7 +84,7 @@
       <h1 class="arialroundedmt" style="font-size: 50px;">Kélian MAINDRON</h1>
     </div>
 
-    <!--Waves Container-->
+    <!-- Waves Container -->
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -91,13 +99,13 @@
         </g>
       </svg>
     </div>
-    <!--Waves end-->
+    <!-- Waves end -->
 
   </div>
 
-  <!--Header ends-->
-  <!--Content starts-->
-  <!--Formation starts-->
+  <!-- Header ends -->
+  <!-- Content starts -->
+  <!-- Formation starts -->
 
   <h1 class="arialroundedmt title">
     FORMATION
@@ -138,19 +146,16 @@
     </div>
   </div>
 
-  <!--Formation ends-->
-  <!--Professional-experience starts-->
+  <!-- Formation ends -->
+  <!-- Informatique skill starts-->
 
   <h1 class="arialroundedmt title">
     COMPÉTENCES INFORMATIQUES
   </h1>
 
-
-  <div style="text-align: center;" id="sk">
-
+  <div style="text-align: center;margin-inline: 5%" id="sk">
+    <!-- Auto-completion by JS -->
   </div>
-
-
 
   <script>
     function mouseOver(id) {
@@ -167,77 +172,106 @@
       elm.style.display = "none"
     }
 
+    function pattern(elm, key) {
+      return `
+        <div class="skill-box grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" id="${key}">
+          <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
+            x-data="{ circumference: 50 * 2 * Math.PI, percent: ${elm["percent"]} }"
+            style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
+            id="elm">
+            <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
+              style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
+              <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+                <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
+                  cy="60" />
+                <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
+                  :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
+                  stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
+              </svg>
+              <!-- <span class="absolute text-2xl text-blue-700" x-text="\`\${percent}\%\`"></span> -->
+              <img class="skill-box-img absolute text-2xl text-blue-700" src="${elm["src"]}"/>
+            </div>
+            <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">${key}</p>
+            <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
+              x-text="\`\${percent}\%\`"></span>
+            <div class="slide-text" style="display: none; text-align: left;">
+              <h2>
+                ${elm["desc"]}
+              </h2>
+            </div>
+          </div>
+        </div>
+      `
+    }
+
     var skill_dict = {
       "Python": {
         "src":"./images/python.png", 
-        "percent":"90", 
+        "percent":90, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":`Voici les librairie que j'utilise pour mes différent projets Python.<br><br>
+        Continuellement:<br>- os<br>- sys<br>- time<br>- Flask<br>- Tkinter<br>- Requests<br>- datetime<br>- BeautifulSoup<br><br>
+        Régulièrement:<br>- PIL (Pillow)<br>- NumPy<br>- OpenCV<br>- Discord<br>- Threading<br>- Pytesseract (OCR)<br><br>
+        Parfois:<br>- NLTK<br>- Keras<br>- OpenAI<br>- Pandas<br>- PyTorch<br>- Matplotlib<br>- TensorFlow<br>- Scikit-learn`
       }, 
       "Arduino": {
         "src":"./images/arduino.png", 
-        "percent":"15", 
+        "percent":20, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":"Arduino"
       }, 
       "Java": {
         "src":"./images/java.png", 
-        "percent":"60", 
+        "percent":60, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":"Java"
       }, 
       "HTML": {
         "src":"./images/html.png", 
-        "percent":"80", 
+        "percent":80, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":"HTML"
       }, 
       "CSS": {
         "src":"./images/css.png", 
-        "percent":"30", 
+        "percent":30, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":"CSS"
       }, 
       "PHP": {
         "src":"./images/php.png", 
-        "percent":"60", 
+        "percent":60, 
         "color": "red",
-        "desc":"|0123456789012345678901234567890123456789|"
+        "desc":"PHP"
+      }, 
+      "JavaScript": {
+        "src":"./images/Javascript.png", 
+        "percent":40, 
+        "color": "red",
+        "desc":"JavaScript"
+      }, 
+      "MySQL": {
+        "src":"./images/mysql.png", 
+        "percent":70, 
+        "color": "red",
+        "desc":"MySQL"
       }
-    }
-
-    function pattern(elm, key) {
-      console.log('<div class="skill-box grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" id="' + key + '"><div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20" x-data="{ circumference: 50 * 2 * Math.PI, percent:' + elm["percent"] + ' }"style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"id="elm"><div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;"><svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true"><circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" /><circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference" :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" /></svg>
-            <img class="absolute text-2xl text-blue-700" src="${elm["src"]}" width="50"/>
-          </div>
-          <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Python</p>
-          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
-            x-text="\`\${percent}\%\`"></span>
-          <div class="slide-text" style="display: none;">
-            <h2>
-              ${elm["desc"]}
-            </h2>
-          </div>
-        </div>
-      </div>```);
     }
 
     var base = document.getElementById("sk").innerHTML
     for (const [key, value] of Object.entries(skill_dict)) {
-      console.log(key)
-      console.log(value)
       base += pattern(value, key);
     }
     document.getElementById("sk").innerHTML = base;
 
-    for (const [key, value] of Object.entries(object)) {
-      document.getElementById(key).addEventListener(
+    for (const [key, value] of Object.entries(skill_dict)) {
+      document.getElementById(key).children[0].addEventListener(
         "mouseover", 
         function() {
           mouseOver(key)
         }
       );
-      document.getElementById(key).addEventListener(
+      document.getElementById(key).children[0].addEventListener(
         "mouseout", 
         function() {
           mouseOut(key)
@@ -247,8 +281,8 @@
 
   </script>
 
-  <!--Professional-experience ends-->
-  <!--Professional-experience starts-->
+  <!-- Professional-experience ends -->
+  <!-- Professional-experience starts -->
 
   <h1 class="arialroundedmt title">
     EXPÉRIENCES PROFESSIONNELLES
@@ -302,15 +336,15 @@
     </div>
   </div>
 
-  <!--Professional-experience ends-->
-  <!--Content ends-->
-  <!--Footer starts-->
+  <!-- Professional-experience ends -->
+  <!-- Content ends -->
+  <!-- Footer starts -->
 
   <div class="content flex">
     <!-- <p>By.Goodkatz | Free to use </p> -->
   </div>
 
-  <!--Footer ends-->
+  <!-- Footer ends -->
 
 </body>
 
