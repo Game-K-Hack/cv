@@ -8,17 +8,95 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./timeline-style.css">
   <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
+
+  <!-- SKILL MODULE -->
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <script src="./alpine.min.js" defer></script>
+
+  <style>
+    #elm {
+      width: 400px;
+      height: 5rem;
+      align-items: start;
+      /* transition: height 0.4s ease-in-out; */
+      position: absolute;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    }
+
+    #elm:hover {
+      height: 30rem;
+      transition: height 0.3s ease-in-out;
+    }
+
+    #elm:hover .slide-text h2 {
+      animation: 0.5s slide-text 0.2s forwards;
+      transform: translateY(-100%);
+    }
+
+    .slide-text {
+      width: 100%;
+      overflow: hidden;
+      max-width: 360px;
+      position: absolute;
+      margin-top: 7rem;
+      color: rgb(75 85 99);
+      transform: translateY(-100%);
+    }
+
+    @keyframes slide-text {
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <style>
+    .skill-box {
+      display: inline-block;
+      width: 400px;
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
+
+    .skill-box-img {
+      display: block;
+      max-width:50px;
+      max-height:50px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <style>
+    .svg-class {
+      margin: 10px;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      fill: white;
+    }
+
+    .svg-class:hover {
+      cursor: pointer;
+    }
+
+    .svg-mel:hover { fill: #e66450; }
+    .svg-lnk:hover { fill: #3ca0ff; }
+    .svg-git:hover { fill: #1c2128; }
+  </style>
 </head>
 
 <body>
 
   <div class="header">
 
-    <!--Content before waves-->
+    <!-- Content before waves -->
     <div class="inner-header flex">
-      <!--Just the logo.. Don't mind this-->
+      <!-- Just the logo.. Don't mind this -->
       <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" style="margin-top:10px;">
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
         <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
         <g>
           <path
@@ -29,7 +107,7 @@
       <h1 class="arialroundedmt" style="font-size: 50px;">Kélian MAINDRON</h1>
     </div>
 
-    <!--Waves Container-->
+    <!-- Waves Container -->
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -44,60 +122,343 @@
         </g>
       </svg>
     </div>
-    <!--Waves end-->
+    <!-- Waves end -->
 
   </div>
-  <!--Header ends-->
 
-  <!--Content starts-->
-  <!--Timeline starts-->
+  <!-- Header ends -->
+  <!-- Content starts -->
+  <!-- Formation starts -->
 
-  <br><br><br>
-  
-  <h1 class="arialroundedmt">FORMATION</h1>
-
-  <br><br><br>
+  <h1 class="arialroundedmt title">
+    FORMATION
+  </h1>
 
   <div class="container-fluid">
-      <div class="row example-basic">
-          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-              <ul class="timeline">
-                  <li class="timeline-item">
-                      <div class="timeline-info">
-                        <span style="color:#768390;">2021, 2023</span>
-                      </div>
-                      <div class="timeline-marker"></div>
-                      <div class="timeline-content">
-                          <h3 class="timeline-title" style="color:#3d4351;">BTS - Services informatiques aux organisations</h3>
-                          <p style="color:#768390;">À La Joliverie (Saint-Sébastien-sur-Loire)</p>
-                      </div>
-                  </li>
-                  <li class="timeline-item">
-                      <div class="timeline-info">
-                        <span style="color:#768390;">2020, 2021</span>
-                      </div>
-                      <div class="timeline-marker"></div>
-                      <div class="timeline-content">
-                          <h3 class="timeline-title" style="color:#3d4351;">BAC - STI2D (Sciences et technologies de l'industrie et du développement durable)</h3>
-                          <p style="color:#768390;">Option SIN (Système d’Information et Numérique)<br>À Jean-Perrin (Rezé)</p>
-                      </div>
-                  </li>
-                  <li class="timeline-item period">
-                      <div class="timeline-marker"></div>
-                      <div class="timeline-content"></div>
-                  </li>
-              </ul>
-          </div>
+    <div class="row example-basic">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-info">
+              <span style="color:#768390;">2021, 2023</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title" style="color:#3d4351;font-size: 24px;margin-bottom: 5px;">BTS - Services
+                informatiques aux organisations</h3>
+              <p style="color:#768390;">À La Joliverie (Saint-Sébastien-sur-Loire)</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-info">
+              <span style="color:#768390;">2020, 2021</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title" style="color:#3d4351;font-size: 24px;margin-bottom: 5px;">BAC - STI2D (Sciences
+                et technologies de l'industrie et du développement durable)</h3>
+              <p style="color:#768390;">Option SIN (Système d’Information et Numérique)<br>À Jean-Perrin (Rezé)</p>
+            </div>
+          </li>
+          <li class="timeline-item period">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content"></div>
+          </li>
+        </ul>
       </div>
+    </div>
   </div>
-  <!--Timeline ends-->
-  <!--Content ends-->
 
-  <!--Footer starts-->
-  <div class="content flex">
-    <!-- <p>By.Goodkatz | Free to use </p> -->
+  <!-- Formation ends -->
+  <!-- Informatique skill starts-->
+
+  <h1 class="arialroundedmt title"
+    style="margin-bottom: calc(2em - 100px);">
+    COMPÉTENCES INFORMATIQUES
+  </h1>
+
+  <div style="text-align: center;margin-inline: 5%" id="sk">
+    <!-- Auto-completion by JS -->
   </div>
-  <!--Footer ends-->
+
+  <script>
+    function mouseOver(id, val) {
+      var elm = document.querySelector(`div[id="` + id + `"] div[class="slide-text"]`);
+      elm.style.animation = "1s slide-text forwards";
+      elm.style.transform = "translateY(0)";
+      elm.style.display = ""
+    }
+
+    function mouseOut(id, val) {
+      var elm = document.querySelector(`div[id="` + id + `"] div[class="slide-text"]`);
+      elm.style.animation = "1s slide-text forwards";
+      elm.style.transform = "translateY(-100%)";
+      elm.style.display = "none"
+    }
+
+    function pattern(elm, key, index) {
+      return `
+        <div class="skill-box grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" id="${key}">
+          <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
+            x-data="{ circumference: 50 * 2 * Math.PI, percent: ${elm["percent"]} }"
+            style="z-index: ${index+1};"
+            onmouseover="this.style.height='${elm["height"]}'"
+            onmouseout="this.style.height=''"
+            id="elm">
+            <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
+              style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
+              <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+                <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="50" cx="60"
+                  cy="60" />
+                <circle class="text-blue-600" stroke-width="10" :stroke-dasharray="circumference"
+                  :stroke-dashoffset="circumference - percent / 100 * circumference" stroke-linecap="round"
+                  stroke="currentColor" fill="transparent" r="50" cx="60" cy="60" />
+              </svg>
+              <!-- <span class="absolute text-2xl text-blue-700" x-text="\`\${percent}\%\`"></span> -->
+              <img class="skill-box-img absolute text-2xl text-blue-700" src="${elm["src"]}"/>
+            </div>
+            <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">${key}</p>
+            <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;"
+              x-text="\`\${percent}\%\`"></span>
+            <div class="slide-text" style="display: none; text-align: left;">
+              <h2>
+                ${elm["desc"]}
+              </h2>
+            </div>
+          </div>
+        </div>
+      `
+    }
+
+    var skill_dict = {
+      "Python": {
+        "src":"./images/python.png", 
+        "percent":90, 
+        "color": "red",
+        "desc":`Voici les librairie que j'utilise pour mes différent projets Python.<br>
+                <br>
+                Continuellement:<br>
+                  &nbsp;- OS<br>
+                  &nbsp;- Sys<br>
+                  &nbsp;- Time<br>
+                  &nbsp;- Flask<br>
+                  &nbsp;- Tkinter<br>
+                  &nbsp;- Requests<br>
+                  &nbsp;- Datetime<br>
+                  &nbsp;- BeautifulSoup<br>
+                <br>
+                Régulièrement:<br>
+                  &nbsp;- PIL (Pillow)<br>
+                  &nbsp;- Json<br>
+                  &nbsp;- NumPy<br>
+                  &nbsp;- OpenCV<br>
+                  &nbsp;- Random<br>
+                  &nbsp;- Discord<br>
+                  &nbsp;- Logging<br>
+                  &nbsp;- Pyaudio<br>
+                  &nbsp;- Threading<br>
+                  &nbsp;- Subprocess<br>
+                  &nbsp;- Websockets<br>
+                  &nbsp;- Pytesseract (OCR)<br>
+                  &nbsp;- Configparser<br>
+                <br>
+                Parfois:<br>
+                  &nbsp;- NLTK<br>
+                  &nbsp;- Keras<br>
+                  &nbsp;- Base64<br>
+                  &nbsp;- OpenAI<br>
+                  &nbsp;- Pandas<br>
+                  &nbsp;- Pynput<br>
+                  &nbsp;- Winreg<br>
+                  &nbsp;- Asyncio<br>
+                  &nbsp;- Pystray<br>
+                  &nbsp;- PyTorch<br>
+                  &nbsp;- Zipfile<br>
+                  &nbsp;- Win32gui<br>
+                  &nbsp;- Pyautogui<br>
+                  &nbsp;- Matplotlib<br>
+                  &nbsp;- TensorFlow<br>
+                  &nbsp;- Scikit-learn<br>`, 
+        "height":"58em"
+      }, 
+      "Arduino": {
+        "src":"./images/arduino.png", 
+        "percent":20, 
+        "color": "red",
+        "desc":"Arduino", 
+        "height":"10em"
+      }, 
+      "Java": {
+        "src":"./images/java.png", 
+        "percent":60, 
+        "color": "red",
+        "desc":"Java", 
+        "height":"10em"
+      }, 
+      "HTML": {
+        "src":"./images/html.png", 
+        "percent":80, 
+        "color": "red",
+        "desc":"HTML", 
+        "height":"10em"
+      }, 
+      "CSS": {
+        "src":"./images/css.png", 
+        "percent":30, 
+        "color": "red",
+        "desc":"CSS", 
+        "height":"10em"
+      }, 
+      "PHP": {
+        "src":"./images/php.png", 
+        "percent":60, 
+        "color": "red",
+        "desc":"PHP", 
+        "height":"10em"
+      }, 
+      "JavaScript": {
+        "src":"./images/Javascript.png", 
+        "percent":40, 
+        "color": "red",
+        "desc":"JavaScript", 
+        "height":"10em"
+      }, 
+      "MySQL": {
+        "src":"./images/mysql.png", 
+        "percent":70, 
+        "color": "red",
+        "desc":"MySQL", 
+        "height":"10em"
+      }
+    }
+
+    var index = Object.entries(skill_dict).length;
+    var base = document.getElementById("sk").innerHTML
+    for (const [key, value] of Object.entries(skill_dict)) {
+      base += pattern(value, key, index);
+      index -= 1;
+    }
+    document.getElementById("sk").innerHTML = base;
+
+    for (const [key, value] of Object.entries(skill_dict)) {
+      document.getElementById(key).children[0].addEventListener(
+        "mouseover", 
+        function() {
+          mouseOver(key, value)
+        }
+      );
+      document.getElementById(key).children[0].addEventListener(
+        "mouseout", 
+        function() {
+          mouseOut(key, value)
+        }
+      );
+    }
+
+  </script>
+
+  <!-- Professional-experience ends -->
+  <!-- Professional-experience starts -->
+
+  <h1 class="arialroundedmt title">
+    EXPÉRIENCES PROFESSIONNELLES
+  </h1>
+
+  <div class="container-fluid">
+    <div class="row example-basic">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-info">
+              <span style="color:#768390;">3 JANVIER | 17 FEVRIER, 2023</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title" style="color:#3d4351;font-size: 24px;margin-bottom: 5px;">Stage 2<sup>ème</sup> année BTS SIO - Sodebo
+                (Montaigu-Vendée)</h3>
+              <p style="color:#768390;">
+                - Création de fichiers de <strong>configuration GitLab-CI</strong> pour la migration de projets<br>
+                - Création d’API via <strong>Gravitee</strong><br>
+                - Création d’un <strong>script Python</strong> pour transférer des dépendances<br>
+                - Création de requêtes d’alert <strong>RabbitMQ sur Prometheus</strong><br>
+                - Création de graphiques d’alert <strong>RabbitMQ sur Graphana</strong>
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-info">
+              <span style="color:#768390;">23 MAI | 25 JUIN, 2022</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title" style="color:#3d4351;font-size: 24px;margin-bottom: 5px;">Stage 1<sup>ère</sup> année BTS SIO - Sodebo
+                (Montaigu-Vendée)</h3>
+              <p style="color:#768390;">
+                - Modification d'application web (pour la production) en <strong>Angular</strong><br>
+                - Création de matrice de tests sur <strong>Squash</strong><br>
+                - Création d’interfaces pour un projet de gestion de fournitures sous <strong>Angular</strong><br>
+                - Réalisation d’un test de <strong>sécurité informatique</strong>
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-info">
+              <span style="color:#768390;">22 JANVIER | 25 JANVIER, 2018</span>
+            </div>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title" style="color:#3d4351;font-size: 24px;margin-bottom: 5px;">Stage découverte 3<sup>ème</sup> - Airbus
+                (Bouguenais)</h3>
+              <p style="color:#768390;">(Découverte de tous les secteurs)</p>
+            </div>
+          </li>
+          <li class="timeline-item period">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional-experience ends -->
+  <!-- Center-of-interest starts -->
+
+  <h1 class="arialroundedmt title">
+    CENTRE D'INTÉRÊT
+  </h1>
+
+  <!-- Center-of-interest starts -->
+  <!-- Content ends -->
+  <!-- Footer starts -->
+
+  <div class="content flex" style="background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);height: 5em;">
+    
+    <p style="color: white;font-size: 1.2em;text-align: center;display: inline-flex;">
+
+      <a onclick="window.open('mailto:maindron.kelian@laposte.net', '_self').focus();">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-mel" viewBox="0 0 512 512">
+          <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+        </svg>
+      </a>
+
+      <a onclick="window.open('https://www.linkedin.com/in/kelian-maindron', '_blank').focus();">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-lnk" viewBox="0 0 448 512">
+          <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+      </a>
+
+      <a onclick="window.open('https://github.com/Game-K-Hack', '_blank').focus();">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-git" viewBox="0 0 496 512">
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+        </svg>
+      </a>
+
+      <!-- Curriculum vitæ | Kélian Maindron | 2023 -->
+    </p>
+  </div>
+
+  <!-- Footer ends -->
 
 </body>
 

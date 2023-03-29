@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <!-- <link rel="manifest" href="https://tailwindcomponents.com/site.webmanifest"> -->
+    <!-- <link rel="mask-icon" href="https://tailwindcomponents.com/safari-pinned-tab.svg" color="#0ed3cf"> -->
+    <meta name="msapplication-TileColor" content="#0ed3cf">
+    <meta name="theme-color" content="#0ed3cf">
+
+    <title>Simple card by Kamona-WD. </title>
+
+    <script src="https://cdn.tailwindcss.com/"></script>>
+</head>
+<body class="bg-gray-200">
+    <!-- <div class="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 text-center text-white bg-gray-800">
+        This a Simple card by Kamona-WD. 
+        <a class="text-gray-200 underline" href="https://tailwindcomponents.com/component/simple-card-3">Component details</a>
+    </div> -->
+    <script src="./alpine.min.js" defer></script>
+<div class="min-h-screen py-20 px-10 bg-gray-100">
+  <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
+
+    <style>
+      #elm2 {
+        height: 5rem;
+        align-items: start;
+        /* transition: height 0.4s ease-in-out; */
+      }
+
+      #elm2:hover {
+        height: 30rem;
+        transition: height 0.3s ease-in-out;
+      }
+
+      .slide-text {
+        width: 100%;
+        overflow: hidden;
+        max-width: 360px;
+        position: absolute;
+        margin-top: 7rem;
+        color: rgb(75 85 99);
+        transform: translateY(-100%);
+      }
+
+      #elm2:hover .slide-text h2 {
+        animation: 0.5s slide-text 0.2s forwards;
+        transform:translateY(-100%);
+      }
+
+      @keyframes slide-text {
+        to {
+          transform:translateY(0);
+        }
+      }
+    </style>
+
+    <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
+      x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
+      id="elm2">
+      <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
+        <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+          <circle
+            class="text-gray-300"
+            stroke-width="10"
+            stroke="currentColor"
+            fill="transparent"
+            r="50"
+            cx="60"
+            cy="60"
+            />
+          <circle
+            class="text-blue-600"
+            stroke-width="10"
+            :stroke-dasharray="circumference"
+            :stroke-dashoffset="circumference - percent / 100 * circumference"
+            stroke-linecap="round"
+            stroke="currentColor"
+            fill="transparent"
+            r="50"
+            cx="60"
+            cy="60"
+            />
+        </svg>
+        <span class="absolute text-2xl text-blue-700" x-text="`${percent}%`"></span>
+      </div>
+      <p class="ml-10 font-medium text-gray-600 sm:text-xl" style="margin-top: 25px;">Storage</p>
+      <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block" style="margin-top: 25px;" x-text="`${percent}%`"></span>
+      <div class="slide-text" style="display: none;">
+        <h2>
+          |0123456789012345678901234567890123456789|<br>
+          |0123456789012345678901234567890123456789|<br>
+          |0123456789012345678901234567890123456789|<br>
+          |0123456789012345678901234567890123456789|<br>
+          |0123456789012345678901234567890123456789|<br>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("elm2").addEventListener("mouseover", mouseOver);
+  document.getElementById("elm2").addEventListener("mouseout", mouseOut);
+
+  function mouseOver() {
+    var elm = document.querySelector(`div[class="slide-text"]`);
+    elm.style.animation = "1s slide-text forwards";
+    elm.style.transform = "translateY(0)";
+    elm.style.display = ""
+  }
+
+  function mouseOut() {
+    var elm = document.querySelector(`div[class="slide-text"]`);
+    elm.style.animation = "1s slide-text forwards";
+    elm.style.transform = "translateY(-100%)";
+    elm.style.display = "none"
+  }
+</script>
+
+</body>
+
+</html>
