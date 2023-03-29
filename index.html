@@ -15,9 +15,11 @@
 
   <style>
     #elm {
+      width: 400px;
       height: 5rem;
       align-items: start;
       /* transition: height 0.4s ease-in-out; */
+      position: absolute;
     }
 
     #elm:hover {
@@ -54,6 +56,7 @@
       margin-left: 25px;
       margin-right: 25px;
       margin-bottom: 100px;
+      margin-top: 100px;
     }
     .skill-box-img {
       display: block;
@@ -149,7 +152,8 @@
   <!-- Formation ends -->
   <!-- Informatique skill starts-->
 
-  <h1 class="arialroundedmt title">
+  <h1 class="arialroundedmt title"
+    style="margin-bottom: calc(2em - 100px);">
     COMPÉTENCES INFORMATIQUES
   </h1>
 
@@ -172,12 +176,12 @@
       elm.style.display = "none"
     }
 
-    function pattern(elm, key) {
+    function pattern(elm, key, index) {
       return `
         <div class="skill-box grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10" id="${key}">
           <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-xl rounded-2xl h-20"
             x-data="{ circumference: 50 * 2 * Math.PI, percent: ${elm["percent"]} }"
-            style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;"
+            style="box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;z-index: ${index+1};:hover{height: ${elm["height"]};"
             id="elm">
             <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full"
               style="box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;">
@@ -212,55 +216,65 @@
         "desc":`Voici les librairie que j'utilise pour mes différent projets Python.<br><br>
         Continuellement:<br>- os<br>- sys<br>- time<br>- Flask<br>- Tkinter<br>- Requests<br>- datetime<br>- BeautifulSoup<br><br>
         Régulièrement:<br>- PIL (Pillow)<br>- NumPy<br>- OpenCV<br>- Discord<br>- Threading<br>- Pytesseract (OCR)<br><br>
-        Parfois:<br>- NLTK<br>- Keras<br>- OpenAI<br>- Pandas<br>- PyTorch<br>- Matplotlib<br>- TensorFlow<br>- Scikit-learn`
+        Parfois:<br>- NLTK<br>- Keras<br>- OpenAI<br>- Pandas<br>- PyTorch<br>- Matplotlib<br>- TensorFlow<br>- Scikit-learn`, 
+        "height":"42em"
       }, 
       "Arduino": {
         "src":"./images/arduino.png", 
         "percent":20, 
         "color": "red",
-        "desc":"Arduino"
+        "desc":"Arduino", 
+        "height":"10em"
       }, 
       "Java": {
         "src":"./images/java.png", 
         "percent":60, 
         "color": "red",
-        "desc":"Java"
+        "desc":"Java", 
+        "height":"10em"
       }, 
       "HTML": {
         "src":"./images/html.png", 
         "percent":80, 
         "color": "red",
-        "desc":"HTML"
+        "desc":"HTML", 
+        "height":"10em"
       }, 
       "CSS": {
         "src":"./images/css.png", 
         "percent":30, 
         "color": "red",
-        "desc":"CSS"
+        "desc":"CSS", 
+        "height":"10em"
       }, 
       "PHP": {
         "src":"./images/php.png", 
         "percent":60, 
         "color": "red",
-        "desc":"PHP"
+        "desc":"PHP", 
+        "height":"10em"
       }, 
       "JavaScript": {
         "src":"./images/Javascript.png", 
         "percent":40, 
         "color": "red",
-        "desc":"JavaScript"
+        "desc":"JavaScript", 
+        "height":"10em"
       }, 
       "MySQL": {
         "src":"./images/mysql.png", 
         "percent":70, 
         "color": "red",
-        "desc":"MySQL"
+        "desc":"MySQL", 
+        "height":"10em"
       }
     }
 
+    var index = Object.entries(skill_dict).length;
     var base = document.getElementById("sk").innerHTML
     for (const [key, value] of Object.entries(skill_dict)) {
-      base += pattern(value, key);
+      base += pattern(value, key, index);
+      index -= 1;
     }
     document.getElementById("sk").innerHTML = base;
 
