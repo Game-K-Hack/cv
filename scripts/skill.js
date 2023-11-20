@@ -52,7 +52,7 @@ loadYAML("./data/skill.yml", content => {
 
   let baseSkpl = document.getElementById("skpl").innerHTML
   lang.forEach(function (value, index) {
-    baseSkpl += patternSkill(value, lang.length-index);
+    baseSkpl += patternSkill(value, (lang.length*2)-index);
   });
 
   document.getElementById("skpl").innerHTML = baseSkpl;
